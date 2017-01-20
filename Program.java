@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public class Program {
@@ -13,8 +15,8 @@ public class Program {
 
 		parser.parse();
 
-		//Enter here the search node
-		String nodeName = "newspaper";
+		/*Enter here the search node*/
+		String nodeName = "chalk";
 
 		if (graph.getNodes().containsKey(nodeName)) {
 
@@ -23,17 +25,42 @@ public class Program {
 			if (node.iSterminationNode())
 				System.out.println("The node is Termination Node! nothing to check");
 
-			else
-				printNodeProbability(node, COMPLETE);		
+			else {
+
+				Map<String, Float> resMap = new HashMap<String, Float>();
+
+				calculateNodeProbability(node, COMPLETE, resMap);
+
+				printAns(resMap);
+			}
 		}
+
 		else 
 			System.out.println("Error: No such node in the graph !");
+
 	}
 
-	private static void printNodeProbability(Node node, float percentage) {
+	private static void printAns(Map<String, Float> resMap) {
 
-		if (node.iSterminationNode())
-			System.out.println("Probability of Node " + node.getName() + " is " + percentage + "%");
+		for (Entry<String, Float> pair : resMap.entrySet()) 
+			System.out.println("Probability of Node " + pair.getKey()  + " is " + pair.getValue() + "%");
+	}
+
+	private static void calculateNodeProbability(Node node, float percentage, Map<String, Float> resMap) {
+
+		if (node.iSterminationNode()) {
+
+			String name = node.getName();
+
+			if (resMap.containsKey(name)) {
+
+				float p = resMap.get(name);
+				resMap.put(name, (p + percentage));
+			}
+
+			else 
+				resMap.put(name, percentage);
+		}
 
 		float sum = calculateWeightSumOfOutgoingEdges(node);
 
@@ -41,7 +68,7 @@ public class Program {
 
 			Node n = adjacencyPair.getKey();
 			int weight = adjacencyPair.getValue();
-			printNodeProbability(n, (weight/sum) * percentage );
+			calculateNodeProbability(n, ( (weight/sum) * percentage ), resMap);
 		}
 	}
 
