@@ -27,7 +27,7 @@ W = { w(A,B) = -2, w(A,C) = 3 }
 F(W) = W' = { w(A,B) = 1, w(A,C) = 6 } 
 
 ***For each search-word the algorithm will re-run from the beginning i.e for k search-words the time-complexity
-will be K * O(our-algorithmtime-complexity) = K * O(V) (V=Vertexs). 
+will be K * O(our-algorithm-time-complexity) = K * O(V) (V=Vertexs). 
 For big k its can cause a problem time-complexity wise.
 In additional, if we run 2 search-words or more with father-child relation, 
 we don't use the information we get from the first run into the run after
