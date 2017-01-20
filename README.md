@@ -32,4 +32,4 @@ For big k its can cause a problem time-complexity wise.
 In additional, if we run 2 search-words or more with father-child relation, 
 we don't use the information we get from the first run into the run after
 
-Possible Solution: Memoization via exta fields / data-structure
+Possible Solution: Memoization via extra fields / data-structure
