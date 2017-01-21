@@ -13,15 +13,20 @@ Problems with the current state:
 ***Doesn't work with negative weight edges
 
 Possible Solution:
+
+
 1. Not allow negative weight edges
 
-                                                                                                                                         2. Build a function F: W --> W' {W: E --> Z, W': E --> N} that meet our requirements for each specific case. 
+2. Build a function F: W --> W' {W: E --> Z, W': E --> N} that meet our requirements for each specific case. 
+
 (E = edges, Z = set of all integers, N = set of all Natural Numbers)
 
 For Example:
 
-                                                                                                                                     A:-2:B
-                                                                                                                                       A:3:C
+A:-2:B
+
+A:3:C
+
 
 W = { w(A,B) = -2, w(A,C) = 3 }
 
