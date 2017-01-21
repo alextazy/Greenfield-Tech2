@@ -14,6 +14,7 @@ Problems with the current state:
 
 Possible Solution:
 1. Not allow negative weight edges
+
 2. Build a function F: W --> W' {W: E --> Z, W': E --> N} that meet our requirements for each specific case. 
 (E = edges, Z = set of all integers, N = set of all Natural Numbers)
 
