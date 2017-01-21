@@ -30,7 +30,7 @@ A:3:C
 
 W = { w(A,B) = -2, w(A,C) = 3 }
 
-F(W) = W' = { w(A,B) = 1, w(A,C) = 6 } 
+F(W) = W' = { w'(A,B) = 1, w'(A,C) = 6 } 
 
 ***For each search-word the algorithm will re-run from the beginning i.e for k search-words the time-complexity
 will be K * O(our-algorithm-time-complexity) = K * O(V) (V=Vertexs). 
